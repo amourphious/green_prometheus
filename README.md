@@ -1,6 +1,6 @@
-#Green Prometheus
+# Green Prometheus
 
-NOTE: Build steps for Arch, please update for you specific OS
+NOTE: Build steps for Manjaro Arch, please update for you specific OS
 
 ## Prereq
 
@@ -9,13 +9,13 @@ NOTE: Build steps for Arch, please update for you specific OS
 * docker
 * kubectl
 * helm
-``
+```
 
 ##Deploying
 
 ### Prometheus
 
-Deploy using following commanf it will print what it is doing
+#### Deploy using following commanf it will print what it is doing
 
 `
 cd infra
@@ -23,7 +23,7 @@ chmod +x deploy_prometheus.sh
 ./deploy_prometheus.sh
 `
 
-Deploy metrics server
+#### Deploy metrics server
 
 Runs main.go in ../metrics_server
 
