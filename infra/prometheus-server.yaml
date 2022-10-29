@@ -323,7 +323,7 @@ data:
   recording_rules.yml: |
     groups:
       - name: green_systems
-      rules:
+        rules:
         - record: agg:avg:carbonEmission:location
           expr: avg(carbonEmission) by (location)
         - record: agg:median:carbonEmission:location

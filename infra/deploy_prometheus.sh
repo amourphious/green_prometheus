@@ -8,10 +8,11 @@ echo "##########################################################################
 echo "################################################################################################"
 ## Only for the first time
 ## uncomment use package manager to install helm and minikube
+echo "yay install helm"
+echo "yay install minikube kubectl"
 #yay install helm
 #yay install minikube
 export namespace="green-system"
-export user=`whoami`
 
 echo "################################################################################################"
 echo "Uncomment to enable docker"
@@ -26,14 +27,10 @@ sudo systemctl start docker.service
 echo "################################################################################################"
 echo "Doing minikube stuff"
 echo "################################################################################################"
-minikube start --memory=4096
+
+minikube start --memory=4096 --vm-driver=virtualbox
 
 kubectl create namespace green-system
-
-kubectl create serviceaccount ${user} --namespace ${namespace}
-
-kubectl create clusterrolebinding green-admin-role-binding --clusterrole cluster-admin \
-  --serviceaccount=${namespace}:${user} -namespace=${namespace}
 
 ## Add helm repo
 echo "################################################################################################"
@@ -61,7 +58,7 @@ echo "##########################################################################
 echo "Configured Deploymemts..."
 echo "################################################################################################"
 kubectl get deployments --namespace ${namespace}
-kubectl replace -f prometheus-server.yaml -n green-system
+kubectl replace -f prometheus-server.yaml --namespace ${namespace}
 echo "################################################################################################"
 echo "Open Prometheus Portal ======> $ minikube service green-prometheus -n ${namespace}"
 echo "Deployment Dashboard:  ======> $ minikube dashboard"

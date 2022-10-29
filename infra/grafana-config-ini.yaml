@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+  grafana.ini: "[analytics]\ncheck_for_updates = true\n[grafana_net]\nurl = https://grafana.net\n[log]\nmode
+    = console\n[paths]\ndata = /var/lib/grafana/\nlogs = /var/log/grafana\nplugins
+    = /var/lib/grafana/plugins\nprovisioning = /etc/grafana/provisioning\n[server]\ndomain
+    = ''\n[security]\nallow_embedding = true \n[auth.anonymous] \nenabled = true\norg_name
+    = Main Org.\norg_role = Admin\n[auth.basic]\nenabled = false\n[auth] \nenabled
+    = false\ndisable_login_form = true\n"
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: green-grafana
+    meta.helm.sh/release-namespace: green-system
+  labels:
+    app.kubernetes.io/instance: green-grafana
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/version: 9.2.2
+    helm.sh/chart: grafana-6.43.1
+  name: green-grafana
+  namespace: green-system
