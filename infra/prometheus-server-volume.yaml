@@ -1,0 +1,23 @@
+kind: PersistentVolume
+apiVersion: v1
+spec:
+  capacity:
+    storage: 8Gi
+  hostPath:
+    path: /tmp/hostpath-provisioner/green-system/prometheus-server
+    type: DirectoryOrCreate
+  accessModes:
+    - ReadWriteOnce
+  claimRef:
+    kind: PersistentVolumeClaim
+    namespace: green-system
+    name: prometheus-server
+    uid: 5da6ad80-c6a0-47eb-b261-84fe3935ab4c
+    apiVersion: v1
+    resourceVersion: '422'
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  volumeMode: Filesystem
+status:
+  phase: Bound
+

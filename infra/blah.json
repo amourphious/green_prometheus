@@ -1,0 +1,36 @@
+[
+  {
+    "name": "stack1",
+    "region": "useast",
+    "id": 1,
+    "resources": [
+      {
+        "name": "resource1",
+        "resourceType": "resourceType1",
+        "status": "Running"
+      },
+      {
+         "name": "resource2",
+        "resourceType": "resourceType2",
+        "status": "Running"
+      }
+    ]
+  },
+  {
+    "name": "stack1",
+    "region": "uswest",
+    "id": 1,
+    "resources": [
+      {
+        "name": "resource3",
+        "resourceType": "resourceType1",
+        "status": "Running"
+      },
+      {
+         "name": "resource4",
+        "resourceType": "resourceType2",
+        "status": "Running"
+      }
+    ]
+  }
+]
