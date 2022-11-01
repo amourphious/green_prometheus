@@ -10,6 +10,8 @@ import org.threeten.bp.ZoneId;
 
 import static org.threeten.bp.temporal.ChronoUnit.MINUTES;
 
+import java.util.Set;
+
 public class CarbonAPIScraper implements Scraper {
 
     private final CarbonAwareApi carbonAwareApi;

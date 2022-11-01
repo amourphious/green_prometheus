@@ -86,8 +86,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
-        "w": 12,
+        "h": 17,
+        "w": 24,
         "x": 0,
         "y": 0
       },
@@ -246,10 +246,15 @@
         "type": "query"
       },
       {
+        "allValue": ".*",
         "current": {
-          "selected": false,
-          "text": "1",
-          "value": "1"
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": {
           "type": "prometheus",
@@ -257,8 +262,8 @@
         },
         "definition": "stackInfo",
         "hide": 0,
-        "includeAll": false,
-        "multi": false,
+        "includeAll": true,
+        "multi": true,
         "name": "stackId",
         "options": [],
         "query": {
@@ -312,6 +317,6 @@
   "timezone": "",
   "title": "CarbonEmisions Demo",
   "uid": "e4x7lfH4k",
-  "version": 3,
+  "version": 2,
   "weekStart": ""
 }

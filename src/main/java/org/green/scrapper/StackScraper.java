@@ -33,6 +33,6 @@ public class StackScraper implements Scraper {
     private void reportMetrics(Stack stack) {
         stack.getResources().forEach(r -> collector.labels(stack.getRegion(),
                 stack.getId().toString(),
-                r.getResourceType(), r.getName()).set(r.getStatus().equals("Running") ? 1.0d : 0.0d));
+                r.getResourceType(), r.getName()).set(1));
     }
 }

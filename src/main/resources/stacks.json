@@ -1,0 +1,107 @@
+[
+  {
+    "id": 43011998,
+    "name": "arn:aws:cloudformation:ap-south-1:254306680133:stack/ipAHTzsqLbLa/8ce68bc3-7f8c-420f-b5a7-df2b4a0ee9ac",
+    "region": "ap-south-1",
+    "resources": [
+      {
+        "id": 84275378,
+        "name": "qiBdwMeLMIDJ",
+        "resourceType": "AWS::EKS::Cluster",
+        "status": "CREATE_COMPLETE"
+      },
+      {
+        "id": 99981535,
+        "name": "yUCSufFhouzm",
+        "resourceType": "AWS::EKS::Cluster",
+        "status": "CREATE_COMPLETE"
+      },
+      {
+        "id": 4798056,
+        "name": "ItgznVyUqpWQ",
+        "resourceType": "AWS::ECS::Cluster",
+        "status": "CREATE_COMPLETE"
+      },
+      {
+        "id": 52548917,
+        "name": "QIFEwAvIbLmv",
+        "resourceType": "AWS::ECS::Cluster",
+        "status": "CREATE_COMPLETE"
+      },
+      {
+        "id": 89835543,
+        "name": "KKrHPxBHVUdJ",
+        "resourceType": "AWS::EC2::Instance",
+        "status": "CREATE_COMPLETE"
+      }
+    ]
+  },
+  {
+    "id": 56722896,
+    "name": "arn:aws:cloudformation:ca-central-1:254306680133:stack/axJosjPcQsgL/08aea0fb-e73e-4376-9bf4-d6bef7a3709f",
+    "region": "ca-central-1",
+    "resources": [
+      {
+        "id": 75415908,
+        "name": "eLqpwxvEbOSE",
+        "resourceType": "AWS::ECS::Cluster",
+        "status": "CREATE_COMPLETE"
+      },
+      {
+        "id": 30474598,
+        "name": "qufLpteFPouu",
+        "resourceType": "AWS::ECS::Cluster",
+        "status": "CREATE_COMPLETE"
+      },
+      {
+        "id": 56447832,
+        "name": "ursrHmkvZtVN",
+        "resourceType": "AWS::EKS::Cluster",
+        "status": "CREATE_COMPLETE"
+      },
+      {
+        "id": 9016436,
+        "name": "dDhikmaClUaT",
+        "resourceType": "AWS::EC2::Instance",
+        "status": "CREATE_COMPLETE"
+      },
+      {
+        "id": 29240769,
+        "name": "MkYHXONvNekA",
+        "resourceType": "AWS::EC2::Instance",
+        "status": "CREATE_COMPLETE"
+      }
+    ]
+  },
+  {
+    "id": 20476560,
+    "name": "arn:aws:cloudformation:cn-north-1:254306680133:stack/yRFHrZCdyyXU/b050a51f-a1b6-4f81-aa2f-78805d0b4b09",
+    "region": "cn-north-1",
+    "resources": [
+    {
+        "id": 37887373,
+        "name": "ZnZGpTvrUnNy",
+        "resourceType": "AWS::ECS::Cluster",
+        "status": "CREATE_COMPLETE"
+      },
+      {
+        "id": 22125622,
+        "name": "QEMcJqDclrzX",
+        "resourceType": "AWS::EC2::Instance",
+        "status": "CREATE_COMPLETE"
+      },
+      {
+        "id": 36596344,
+        "name": "twkwxULPsjEX",
+        "resourceType": "AWS::EC2::Instance",
+        "status": "CREATE_COMPLETE"
+      },
+      {
+        "id": 97757048,
+        "name": "Ystfrjmcvxgv",
+        "resourceType": "AWS::EKS::Cluster",
+        "status": "CREATE_COMPLETE"
+      }
+    ]
+  }
+]
