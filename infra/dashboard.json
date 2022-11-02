@@ -36,6 +36,137 @@
       "fieldConfig": {
         "defaults": {
           "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "9.2.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "editorMode": "code",
+          "expr": "carbonEmission{location=~\"$locations\"} - agg:median:carbonEmission:1d{location=~\"$locations\"}",
+          "format": "time_series",
+          "hide": false,
+          "instant": false,
+          "legendFormat": " carbon enfficency delta: {{location}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "median delta",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              }
+            ]
+          },
+          "unit": "kg/kwh"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 3,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.2.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P1809F7CD0C75ACF3"
+          },
+          "editorMode": "code",
+          "expr": "carbonEmission{location=~\"$locations\"}",
+          "legendFormat": "{{location}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Current CarbonEmisions",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P1809F7CD0C75ACF3"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
             "mode": "palette-classic"
           },
           "custom": {
@@ -86,9 +217,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 17,
-        "w": 24,
-        "x": 0,
+        "h": 4,
+        "w": 6,
+        "x": 6,
         "y": 0
       },
       "id": 2,
@@ -104,18 +235,8 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "9.2.2",
       "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
-          },
-          "editorMode": "code",
-          "expr": "agg:median:carbonEmission:1d{location=~'$locations'}",
-          "legendFormat": "median:carbonEmissions: {{location}}",
-          "range": true,
-          "refId": "A"
-        },
         {
           "datasource": {
             "type": "prometheus",
@@ -126,24 +247,13 @@
           "expr": "stackInfo{name=~'$rs_name', region=~'$stackRegion', s_id=~'$stackId', type=~'$rs_type'}",
           "hide": false,
           "interval": "",
-          "legendFormat": "stackId-{{s_id}}:{{region}}:{{type}}:{{name}}",
+          "legendFormat": "stackId-{{s_id}} | {{region}} | {{type}} | {{name}}",
           "range": true,
           "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
-          },
-          "editorMode": "code",
-          "expr": "carbonEmission{location=~'$locations'}",
-          "hide": false,
-          "legendFormat": "current emisiions: {{location}}",
-          "range": true,
-          "refId": "C"
         }
       ],
-      "title": "Aggregation by locations",
+      "title": "stack usage",
+      "transformations": [],
       "type": "timeseries"
     }
   ],
@@ -155,12 +265,12 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
-            "All"
+            "eastus"
           ],
           "value": [
-            "$__all"
+            "eastus"
           ]
         },
         "datasource": {
@@ -186,12 +296,12 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
-            "All"
+            "us-east-1"
           ],
           "value": [
-            "$__all"
+            "us-east-1"
           ]
         },
         "datasource": {
@@ -217,7 +327,7 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "All"
           ],
@@ -248,7 +358,7 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "All"
           ],
@@ -279,12 +389,12 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
-            "All"
+            "AWS::EC2::Instance"
           ],
           "value": [
-            "$__all"
+            "AWS::EC2::Instance"
           ]
         },
         "datasource": {
@@ -310,13 +420,13 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "CarbonEmisions Demo",
-  "uid": "e4x7lfH4k",
-  "version": 2,
+  "uid": "greenify-mystack",
+  "version": 9,
   "weekStart": ""
 }
